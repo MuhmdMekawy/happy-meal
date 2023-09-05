@@ -9,7 +9,7 @@ export default {
     <div class="container">
       <div class="content">
         <h1 class="head">Happy Meal</h1>
-        <a href="#">
+        <a href="/">
           <img src="../assets/images/menu.png" alt="menu" loading="lazy">
           Menu
         </a>
