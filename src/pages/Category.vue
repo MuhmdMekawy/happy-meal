@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios'
+import '../assets/style/style.css'
 export default {
   name: 'Category',
   data() {
@@ -26,11 +27,14 @@ export default {
 </script>
 
 <template>
-  <div class="category">
+  <div class="loading" v-if="meals === null">
+    <img style="max-width: 100px; margin: 0 auto;" src="../assets/images/loading.gif" alt="image" loading="lazy">
+  </div>
+  <div class="category" v-if="meals !== null">
     <div class="container">
       <h1>{{ catName }} Meals</h1>
       <div class="content">
-        <router-link to="#" class="cont" v-for="meal in meals" :key="meal.idMeal">
+        <router-link :to="'/meal/'+meal.strMeal" class="cont" v-for="meal in meals" :key="meal.idMeal">
           <div class="image">
             <img :src="meal.strMealThumb" alt="img" loading="lazy">
           </div>
@@ -73,6 +77,10 @@ export default {
       height: 350px;
       // padding: 15px 0;
       text-overflow: ellipsis;
+      transition: 0.3s;
+      &:hover{
+        border-radius: 15px;
+      }
       @media(max-width:500px){
         max-width: 355px;
         margin: 0 auto;
@@ -82,13 +90,7 @@ export default {
         h3{
           font-size: 24px;
           font-weight: 600;
-          margin-bottom: 10px;
-        }
-        p{
-          margin-bottom: 0;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 1.8;
+          margin-bottom: 0px;
         }
       }
       .image{
