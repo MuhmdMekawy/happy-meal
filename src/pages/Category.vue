@@ -14,8 +14,8 @@ export default {
     }
   },
   methods: {
-    fetchData() {
-      axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${this.catName}`).then((res) => {
+    async fetchData() {
+      await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${this.catName}`).then((res) => {
         return this.meals = res.data.meals
       })
     }
@@ -34,7 +34,7 @@ export default {
     <div class="container">
       <h1>{{ catName }} Meals</h1>
       <div class="content">
-        <router-link :to="'/meal/'+meal.strMeal" class="cont" v-for="meal in meals" :key="meal.idMeal">
+        <router-link :to="'/meal/'+meal.strMeal" data-aos="zoom-in" data-aos-duration="1000" class="cont" v-for="meal in meals" :key="meal.idMeal">
           <div class="image">
             <img :src="meal.strMealThumb" alt="img" loading="lazy">
           </div>
@@ -80,13 +80,20 @@ export default {
       transition: 0.3s;
       &:hover{
         border-radius: 15px;
+        border: none;
+        .text{
+          background: #e88c38;
+          color: #fff;
+          text-align: center;
+        }
       }
       @media(max-width:500px){
         max-width: 355px;
         margin: 0 auto;
       }
       .text{
-        padding: 10px;
+        padding: 6px;
+        transition: 0.3s;
         h3{
           font-size: 24px;
           font-weight: 600;

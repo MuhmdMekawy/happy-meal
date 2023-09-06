@@ -8,8 +8,8 @@ export default {
     }
   },
   methods: {
-    fetchData() {
-      axios.get('https://www.themealdb.com/api/json/v1/1/categories.php').then((res) => {
+    async fetchData() {
+      await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php').then((res) => {
         return this.meals = res.data.categories
       })
     }
@@ -28,7 +28,7 @@ export default {
     <div class="container">
       <h1>All Categories</h1>
       <div class="content">
-        <router-link :to="'/category/' + meal.strCategory" class="cont" v-for="meal in meals" :key="meal.idCategory">
+        <router-link :to="'/category/' + meal.strCategory"  data-aos="zoom-in" data-aos-duration="1000" class="cont" v-for="meal in meals" :key="meal.idCategory">
           <div class="image">
             <img :src="meal.strCategoryThumb" alt="img" loading="lazy">
           </div>
@@ -62,7 +62,7 @@ export default {
     @media (max-width : 991px){
       grid-template-columns: repeat(2 , 1fr);
     }
-    @media (max-width : 500px){
+    @media (max-width : 535px){
       grid-template-columns: repeat(1 , 1fr);
     }
     .cont{
@@ -72,7 +72,7 @@ export default {
       height: 350px;
       padding: 15px 0;
       text-overflow: ellipsis;
-      @media(max-width:500px){
+      @media(max-width:535px){
         max-width: 355px;
         margin: 0 auto;
       }
