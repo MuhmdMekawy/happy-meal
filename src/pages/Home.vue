@@ -75,6 +75,7 @@ export default {
       @media(max-width:400px){
         // max-width: 355px;
         margin: 0 auto;
+        width: 100%;
       }
       .text{
         padding: 10px;
