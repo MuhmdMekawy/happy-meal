@@ -85,8 +85,9 @@ export default {
         padding: 6px;
         transition: 0.3s;
         display: none;
+        transition: 0.3s;
         h3{
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 600;
           margin-bottom: 0px;
         }
