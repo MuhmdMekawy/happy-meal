@@ -62,7 +62,7 @@ export default {
     @media (max-width : 991px){
       grid-template-columns: repeat(2 , 1fr);
     }
-    @media (max-width : 535px){
+    @media (max-width : 400px){
       grid-template-columns: repeat(1 , 1fr);
     }
     .cont{
@@ -72,8 +72,8 @@ export default {
       // height: 350px;
       padding: 10px 0;
       text-overflow: ellipsis;
-      @media(max-width:535px){
-        max-width: 355px;
+      @media(max-width:400px){
+        // max-width: 355px;
         margin: 0 auto;
       }
       .text{
@@ -82,7 +82,7 @@ export default {
         h3{
           font-size: 24px;
           font-weight: 600;
-          margin-bottom: 10px;
+          margin-bottom: 0px;
         }
         p{
           margin-bottom: 0;
