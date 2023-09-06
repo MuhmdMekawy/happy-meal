@@ -73,29 +73,20 @@ export default {
     .cont{
       border: 1px solid #333;
       border-radius: 3px;
-      overflow: hidden;
-      height: 350px;
       // padding: 15px 0;
       text-overflow: ellipsis;
       transition: 0.3s;
-      &:hover{
-        border-radius: 15px;
-        border: none;
-        .text{
-          background: #e88c38;
-          color: #fff;
-          text-align: center;
-        }
-      }
       @media(max-width:500px){
         max-width: 355px;
+        height: fit-content;
         margin: 0 auto;
       }
       .text{
         padding: 6px;
         transition: 0.3s;
+        display: none;
         h3{
-          font-size: 24px;
+          font-size: 18px;
           font-weight: 600;
           margin-bottom: 0px;
         }
@@ -105,6 +96,17 @@ export default {
         margin: 0 auto;
         img{
           object-fit: contain;
+        }
+      }
+      &:hover{
+        border-radius: 15px;
+        border: none;
+        overflow: hidden;
+        .text{
+          background: #e88c38;
+          color: #fff;
+          text-align: center;
+          display: block;
         }
       }
     }

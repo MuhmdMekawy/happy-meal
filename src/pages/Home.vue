@@ -69,8 +69,8 @@ export default {
       border: 1px solid #333;
       border-radius: 3px;
       overflow: hidden;
-      height: 350px;
-      padding: 15px 0;
+      // height: 350px;
+      padding: 10px 0;
       text-overflow: ellipsis;
       @media(max-width:535px){
         max-width: 355px;
@@ -78,6 +78,7 @@ export default {
       }
       .text{
         padding: 10px;
+        text-align: center;
         h3{
           font-size: 24px;
           font-weight: 600;
@@ -88,6 +89,7 @@ export default {
           font-size: 14px;
           font-weight: 400;
           line-height: 1.8;
+          display: none;
         }
       }
       .image{
