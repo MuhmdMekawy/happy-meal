@@ -43,10 +43,10 @@ export default {
           <p><span>Instructions : </span><br> {{ item.strInstructions }}</p>
           <ul>
             <p v-if=" item.strTags !== null">Tags: </p>
-            <li v-if=" item.strTags !== null && item.strTags.split(',')[0] ">{{ item.strTags.split(',')[0] }}</li>
-            <li v-if=" item.strTags !== null && item.strTags.split(',')[1] ">{{ item.strTags.split(',')[1] }}</li>
+            <li v-if=" item.strTags !== null && item.strTags.split(',') " v-for="tag in item.strTags.split(',')">{{ tag }}</li>
+            <!-- <li v-if=" item.strTags !== null && item.strTags.split(',')[1] ">{{ item.strTags.split(',')[1] }}</li>
             <li v-if=" item.strTags !== null && item.strTags.split(',')[2] ">{{ item.strTags.split(',')[2] }}</li>
-            <li v-if=" item.strTags !== null && item.strTags.split(',')[3] ">{{ item.strTags.split(',')[3] }}</li>
+            <li v-if=" item.strTags !== null && item.strTags.split(',')[3] ">{{ item.strTags.split(',')[3] }}</li> -->
           </ul>
           <h4>Preparation method Video => <a target="_blank" :href="item.strYoutube">click here</a></h4>
           <h5>Ingredients</h5>

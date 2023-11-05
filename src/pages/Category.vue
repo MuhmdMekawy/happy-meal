@@ -73,7 +73,6 @@ export default {
     .cont{
       border: 1px solid #333;
       border-radius: 3px;
-      // padding: 15px 0;
       text-overflow: ellipsis;
       transition: 0.3s;
       @media(max-width:500px){
